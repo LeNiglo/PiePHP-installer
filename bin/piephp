@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+if (file_exists(__DIR__.'/../../../autoload.php')) {
+    require __DIR__.'/../../../autoload.php';
+} else {
+    require __DIR__.'/../vendor/autoload.php';
+}
+
+// require_once __DIR__.'/../src/Installer.php';
+
+$executable = array_shift($argv);
+$command = array_shift($argv);
+
+if (function_exists($command)) {
+    exit(call_user_func_array($command, $argv));
+}
+
+function create($name = false)
+{
+    $installer = new PiePHP\Console\Installer($name);
+    $installer->download()->extract()->cleanup();
+}

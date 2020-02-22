@@ -1,0 +1,25 @@
+{
+    "name": "leniglo/piephp-installer",
+    "description": "Command Line Installer for PiePHP framework",
+    "type": "binary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LeNiglo",
+            "email": "lefrantguillaume@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+        "php": "^7.2",
+        "ext-zip": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PiePHP\\Console\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/piephp"
+    ]
+}
